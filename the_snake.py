@@ -141,8 +141,8 @@ class Snake(GameObject):
         if self.next_direction is not None:
 
             is_reverse = (
-                self.next_direction[0] == -self.direction[0] and
-                self.next_direction[1] == -self.direction[1]
+                self.next_direction[0] == -self.direction[0]
+                and self.next_direction[1] == -self.direction[1]
             )
 
             if not is_reverse:
@@ -194,7 +194,6 @@ def main():
         # Проверяем, не врезалась ли змея в себя
         head = snake.get_head_position()
         if head in snake.positions[1:]:
-            print("Игра окончена! Врезался в себя.")
             snake.reset()
             continue
         # Рост змейки на деление, если съела яблоко
